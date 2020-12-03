@@ -5,7 +5,11 @@
 ### Universidad del Desarrollo
 
 Los modelos de lenguaje natural han adquirido una gran relevancia desde 2018 desde la incorporación de la arquitectura Transformer. Aunque existe una gran cantidad y muy diversos trabajos al respecto, muy poco podemos encontrar en español. 
+
+
 Este trabajo aborda una aplicación del modelo GPT-2, una implementación de arquitectura transformer, para ejecutar tareas de generación de texto casual y texto controlado. En ambos casos hemos realizado el entrenamiento con las publicaciones de las autoridades políticas chilenas en la red social twitter.
+
+
 Los resultados muestran que incluso un modelo GPT-2 base puede ser ajustado para cumplir una tarea específica como generar nuevos Tweets políticos reutilizando el aprendizaje del lenguage pre entrenado. Además entrenamos el modelo para que aprenda de los contextos de cada uno de los tweets y utilizar estos mismos contextos para solicitar la generación de acuerdo a parámetros de control. 
 Las aplicaciones de estos nuevos modelos de lenguaje con atención están en la vida personal como en el mundo empresarial. Usando estas innovaciones es posible agregar más valor a servicios actuales o crear nuevos servicios, habilitados con esta tecnología.
 
@@ -27,7 +31,7 @@ En este experimento entrenamos un modelo GPT-2 custom utilizando un set de datos
 
 Lo que hicimos acá fue modificar y reprocesar el set de datos para entrenar el modelo utilizando un contexto (entidades, coalición política, partido, sentimiento y palabras claves) De tal forma de que el modelo pudiese entender qué significa este contexto el tuit generado.
 
-El resultado de todo esto es que tenemos un modelo que puede sintetizar nuevo tuit en base a parámetros tales como coalición, PC, sentimiento, entidades y palabras claves.
+El resultado de todo esto es que tenemos un modelo que puede sintetizar nuevo tuit en base a parámetros tales como coalición, partido, sentimiento, entidades y palabras claves.
 
 
 ### Modelos transformers entrenados en esta tesis y disponibles:
