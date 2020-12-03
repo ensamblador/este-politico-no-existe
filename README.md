@@ -57,9 +57,8 @@ input_ids = tokenizer(input_context, return_tensors="pt")
 outputs = model.generate(input_ids=input_ids, max_length=20, do_sample=True)
 
 print("Generated:", tokenizer.decode(outputs[0],skip_special_tokens=True))
-
->> nos encontramos en la zona de la laguna de los Patos, en la zona de la laguna de Aculeo donde algunos vecinos...
-
 ```
-
+```terminal
+>> nos encontramos en la zona de la laguna de los Patos, en la zona de la laguna de Aculeo donde algunos vecinos...
+```
 
