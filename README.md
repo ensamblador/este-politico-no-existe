@@ -28,3 +28,35 @@ En este experimento entrenamos un modelo GPT-2 custom utilizando un set de datos
 Lo que hicimos acá fue modificar y reprocesar el set de datos para entrenar el modelo utilizando un contexto (entidades, coalición política, partido, sentimiento y palabras claves) De tal forma de que el modelo pudiese entender qué significa este contexto el tuit generado.
 
 El resultado de todo esto es que tenemos un modelo que puede sintetizar nuevo tuit en base a parámetros tales como coalición, PC, sentimiento, entidades y palabras claves.
+
+
+### Modelos transformers entrenados en esta tesis y disponibles:
+
+* [GPT-2 entrenado para la generación casual de texto expañol](https://huggingface.co/ensamblador/gpt2-es-48heads)
+
+* [GPT-2 más simple (16 heads, 512 pos) para texto casual español](https://huggingface.co/ensamblador/gpt2_espanol_8hx512pos)
+
+* [GPT-2 (48 heads) Entrenado con tweets de derecha](https://huggingface.co/ensamblador/gpt2-derecha-with-bos-eos-48heads)
+
+
+___
+
+* [Modelo GPT2 Entrenado para generar textos controlados de políticos](https://huggingface.co/ensamblador/gpt2-twitter-politico)
+___
+
+### Uso de los modelos:
+
+Ejemplo: Para utilizar estos modelos ya sea en Tensorflow o PyTorch basta con importarlos utilizando la librería transformers (`pip install transformers`)
+```python 
+from transformers import AutoTokenizer, AutoModelWithLMHead
+tokenizer = AutoTokenizer.from_pretrained("ensamblador/gpt2-derecha-with-bos-eos-8heads")
+model = AutoModelWithLMHead.from_pretrained("ensamblador/gpt2-derecha-with-bos-eos-8heads")
+
+input_context = "Mi nombre es "
+input_ids = tokenizer(input_context, return_tensors="pt").>>> outputs = model.generate(input_ids=input_ids, max_length=20, do_sample=True)
+
+print("Generated:", tokenizer.decode(outputs[0],skip_special_tokens=True))
+
+```
+
+
