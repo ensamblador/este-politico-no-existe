@@ -49,13 +49,16 @@ ___
 Ejemplo: Para utilizar estos modelos ya sea en Tensorflow o PyTorch basta con importarlos utilizando la librería transformers (`pip install transformers`)
 ```python 
 from transformers import AutoTokenizer, AutoModelWithLMHead
-tokenizer = AutoTokenizer.from_pretrained("ensamblador/gpt2-derecha-with-bos-eos-8heads")
-model = AutoModelWithLMHead.from_pretrained("ensamblador/gpt2-derecha-with-bos-eos-8heads")
+tokenizer = AutoTokenizer.from_pretrained("ensamblador/gpt2-es-48heads")
+model = AutoModelWithLMHead.from_pretrained("ensamblador/gpt2-es-48heads")
 
-input_context = "Mi nombre es "
-input_ids = tokenizer(input_context, return_tensors="pt").>>> outputs = model.generate(input_ids=input_ids, max_length=20, do_sample=True)
+input_context = "Nos encontramos "
+input_ids = tokenizer(input_context, return_tensors="pt")
+outputs = model.generate(input_ids=input_ids, max_length=20, do_sample=True)
 
 print("Generated:", tokenizer.decode(outputs[0],skip_special_tokens=True))
+
+>> nos encontramos en la zona de la laguna de los Patos, en la zona de la laguna de Aculeo donde algunos vecinos...
 
 ```
 
